@@ -12,14 +12,9 @@ type StudentType = {
 }
 
 export const NewComponent = (props: NewComponentType) => {
-
     return (
         <ul>
             {props.students.map((objectFromStudentsArray, index) => {
-
-
-
-
                 return (
                     <li key={objectFromStudentsArray.id}>
                       <span>{objectFromStudentsArray.name}</span>
@@ -28,5 +23,33 @@ export const NewComponent = (props: NewComponentType) => {
                 )
             })}
         </ul>
+
     );
 }
+type TasksCarsType = {
+    topCars: topCarsType[];
+}
+
+type topCarsType = {
+    manufacturer: string
+    model: string
+}
+
+export const TasksCars = (props: TasksCarsType) => {
+    return (
+        <table>
+            {props.topCars.map((objectFromCarsArray, index) => {
+                return (
+
+                    <tr>
+                        <td>{objectFromCarsArray.manufacturer}</td>
+                        <th>{objectFromCarsArray.model}</th>
+                    </tr>
+                )
+            })}
+
+        </table>
+
+    )
+};
+
