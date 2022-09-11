@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 type TasksCarsType = {
     topCars: topCarsType[];
 }
@@ -13,7 +14,6 @@ export const TasksCars = (props: TasksCarsType) => {
     return (
         <table>
             {props.topCars.map((objectFromCarsArray, index) => {
-                debugger
                 return (
                     <tr key={index}>
                         <td>{objectFromCarsArray.manufacturer}</td>
