@@ -1,34 +1,30 @@
 import React from 'react';
 
-
-type TasksCarsType = {
-    topCars: topCarsType[];
+type CarsArrayType = {
+    topCars: Array<topCars>
 }
 
-type topCarsType = {
-    manufacturer: string
+type topCars = {
+    manufacturer: string,
     model: string
 }
 
-export const TasksCars = (props: TasksCarsType) => {
+export const TasksCars: React.FC<CarsArrayType> = (props) => {
     return (
-        <table>
-            {props.topCars.map((objectFromCarsArray, index) => {
-                return (
-                    <tr key={index}>
-                        <td>{objectFromCarsArray.manufacturer}</td>
-                        <th>{objectFromCarsArray.model}</th>
-                    </tr>
-                )
-            })}
-
-        </table>
-
-    )
+        <div>
+            <table>
+                {props.topCars.map((objectCars, index) => {
+                    return (
+                        <tr>
+                            <td key={index}>{objectCars.manufacturer} :</td>
+                            <th key={index}>{objectCars.model}</th>
+                        </tr>
+                    )
+                })}
+            </table>
+        </div>
+    );
 };
-
-
-
 
 
 
