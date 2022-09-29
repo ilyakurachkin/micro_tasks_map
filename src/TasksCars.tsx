@@ -16,8 +16,7 @@ export const TasksCars: React.FC<CarsArrayType> = (props) => {
                 {props.topCars.map((objectCars, index) => {
                     return (
                         <tr>
-                            <td key={index}>{objectCars.manufacturer} :</td>
-                            <th key={index}>{objectCars.model}</th>
+                            <div><th key ={index}>{objectCars.manufacturer} :</th></div>                            <td key={index}>{objectCars.model}</td>
                         </tr>
                     )
                 })}
